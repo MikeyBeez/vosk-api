@@ -21,10 +21,12 @@ while True:
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
+        #print(rec.Result())
+        # I commented out this line and added the 3 lines below
         myResult = rec.Result()
         myList = myResult.split("text")
-
         print(myList[1])
+    # I commented out everything below
     #else:
     #    print(rec.PartialResult())
     #    print("two")
