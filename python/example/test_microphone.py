@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/home/bard/miniconda3/envs/kaldi/bin/python
 
 from vosk import Model, KaldiRecognizer
 import os
@@ -21,8 +21,12 @@ while True:
     if len(data) == 0:
         break
     if rec.AcceptWaveform(data):
-        print(rec.Result())
-    else:
-        print(rec.PartialResult())
+        myResult = rec.Result()
+        myList = myResult.split("text")
 
-print(rec.FinalResult())
+        print(myList[1])
+    #else:
+    #    print(rec.PartialResult())
+    #    print("two")
+
+#print(rec.FinalResult())
